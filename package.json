@@ -1,6 +1,6 @@
 {
   "name": "rxjs-publish-subject",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple RxJS Subject with getValue() function",
   "main": "index.js",
   "scripts": {
