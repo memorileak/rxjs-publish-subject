@@ -1,0 +1,14 @@
+{
+  "name": "rxjs-publish-subject",
+  "version": "1.0.0",
+  "description": "Simple RxJS Subject with getValue() function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tungnvan",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.6.2"
+  }
+}
