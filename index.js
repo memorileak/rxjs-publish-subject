@@ -1,20 +1,17 @@
-const {Subject} = require('rxjs');
+import {Subject} from 'rxjs';
 
-function PublishSubject(initialValue, ...params) {
-  Subject.call(this, ...params);
-  this.__value__ = initialValue;
+export class PublishSubject extends Subject {
+  constructor(initialValue, ...params) {
+    super(...params);
+    this.__value__ = initialValue;
+  }
+
+  getValue() {
+    return this.__value__;
+  }
+
+  next(value, ...params) {
+    this.__value__ = value;
+    super.next(value);
+  }
 }
-
-PublishSubject.prototype = Object.create(Subject.prototype);
-
-PublishSubject.prototype.getValue = function getValue() {
-  return this.__value__;
-}
-
-const originNext = PublishSubject.prototype.next;
-PublishSubject.prototype.next = function next(value, ...params) {
-  this.__value__ = value;
-  originNext.call(this, value, ...params);
-}
-
-module.exports = {PublishSubject};
